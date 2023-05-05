@@ -2,13 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../static/styles/4-common.css",cache_id>
     <link rel="stylesheet" type="text/css" href="../static/styles/3-header.css",cache_id>
     <link rel="stylesheet" type="text/css" href="../static/styles/3-footer.css",cache_id>
     <link rel="stylesheet" type="text/css" href="../static/styles/6-filters.css",cache_id>
     <link type="text/css" rel="stylesheet" href="../static/styles/8-places.css",cache_id>
     <link rel="icon" href="../static/images/icon.png" /,cache_id>
-    <script src="static/scripts/1-hbnb.js" defer cache_id></script>
+    <script src="static/scripts/1-hbnb.js" defer{{ cache_id }}></script>
     <title>HBnB</title>
   </head>
   <body>
@@ -42,8 +43,8 @@
 	    <ul>
 	      {% for amenity in amenities %}
 	      <li>{{ amenity.name }}</li>
-	      <input type="checbox" class="amenities_checkbox">
-	      <li>data-id: {{  amenity.id }} </li>
+	      <input type="checkbox" class="amenities_checkbox" data-id="{{ amenity.id }}"
+							       data-name="{{ amenity.name }}">
 	      
 	      {% endfor %}
 	    </ul>
